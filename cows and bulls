@@ -1,0 +1,57 @@
+#python ex18.py
+
+print("Cow and Bull")
+
+import random
+
+def cowbull(num):
+    for x in num:
+        if x in ans:
+            bulls_list.append(x)
+            
+    for val in ans:
+        if val in bulls_list:
+            bulls_list1.append(val)
+
+    for i in range(len(ans)):
+        if ans[i]==num[i]:
+            cows_list.append(ans[i])
+            
+
+    for bull in bulls_list:
+        if bull not in cows_list:
+            bulls_list2.append(bull)
+
+    cows=len(cows_list)
+    bulls=len(bulls_list2)
+
+    result = print(cows,"cows,",bulls,"bulls.")
+    return result
+
+stop=False
+
+while stop==False:
+    ans=random.randint(0000,9999)
+    ans=format(ans,'04d') ##THIS IS A STRING
+    count=1
+    # print(ans)
+    while True:
+        num=input("Enter your guess: ")
+        cows_list=[]
+        bulls_list=[]
+        bulls_list1=[]
+        bulls_list2=[]
+        if num==ans:
+            break
+        else:
+            loop=cowbull(num)
+            count+=1
+
+    print("Congratulations! You guess correctly in:",count,"try!")
+    lagi=input("Play again? (Y/N)")
+    if lagi=="Y":
+        continue
+    else:
+        print("See You!")
+        stop=True
+        break
